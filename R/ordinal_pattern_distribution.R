@@ -4,7 +4,7 @@
 
 #' @title A function to compute ordinal pattern statistics
 #' @export
-#' @useDynLib statcomp
+#' @useDynLib statcomp, .registration = TRUE
 #' @description Computation of the ordinal patterns of a time series (see e.g. Bandt and Pompe 2002)
 #' @usage ordinal_pattern_distribution(x, ndemb)
 #' @param x A numeric vector (e.g. a time series), from which the ordinal pattern distribution is to be calculated  

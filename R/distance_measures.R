@@ -29,10 +29,10 @@
 hellinger_distance = function(p,q) {
   h=0;
   if (length(which(p<0)) != 0 | length(which(q<0)) != 0) {
-    print('positive values required'); return() }
+    message('positive values required'); return() }
   
   if (length(p) != length(q)) {
-    print('Distributions must have the same length!') }
+    message('Distributions must have the same length!') }
   
   #Normalization:
   ht=0;
@@ -75,18 +75,18 @@ jensen_shannon_divergence = function(p,q="unif") {
   
   j_s =0
   ## Assign uniform distribution to vector q if not specified otherwise
-  if (q=="unif") {q <- rep(1, times=length(p))
-                  print("Second vector not specified: Use Uniform Distribution in q!")}
+  if (q[[1]]=="unif") {q <- rep(1, times=length(p))
+                  message("Second vector not specified: Use Uniform Distribution in q!")}
   
   if (length(which(p<0)) != 0 | length(which(q<0)) != 0) {
-    print('positive values required'); return() }
+    message('positive values required'); return() }
   
   if (length(p) != length(q)) {
-    print('Distributions must have the same length!') }
+    message('Distributions must have the same length!') }
   
   for (i in 2:length(q)) {
     if (q[i-1] != q[i])
-      print('WARNING: q is not a uniform distribution! Generalized Disequilibrium might not be in the range [0,1]')
+      message('WARNING: q is not a uniform distribution! Generalized Disequilibrium might not be in the range [0,1]')
   } 
   
   alpha = 0.5

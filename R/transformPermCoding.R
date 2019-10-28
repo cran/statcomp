@@ -27,7 +27,7 @@ transformPermCoding <- function(target_pattern, ndemb) {
   if (is.numeric(target_pattern) && is.matrix(target_pattern) && (dim(target_pattern) == c(factorial(ndemb), ndemb))) {
     pattern = target_pattern
   } else {
-    print("A valid option for 'target_pattern' must be supplied!")
+    message("A valid option for 'target_pattern' must be supplied!")
     return(NA)
   }
   transform_vec = sapply(1:factorial(ndemb), FUN=function(i) which(ordinal_pattern_distribution(pattern[i,], ndemb=dim(pattern)[2]) == 1))

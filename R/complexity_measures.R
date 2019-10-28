@@ -131,7 +131,7 @@ MPR_complexity = function(opd) {
 #' global_complexity(opd = opd, ndemb = 6)
 global_complexity = function(x = NA, opd = NA, ndemb) {
   # if no ordinal pattern distribution is specified:
-  if (is.na(opd))  opd = ordinal_pattern_distribution(x=x, ndemb = ndemb)
+  if (any(is.na(opd)))  opd = ordinal_pattern_distribution(x=x, ndemb = ndemb)
   
   # calculate global complexity measures:
   H_s = permutation_entropy(opd)

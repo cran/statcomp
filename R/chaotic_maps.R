@@ -1,7 +1,7 @@
 ## Create time series of chaotic maps to test Information Theory Quantifiers
 # ---------------------------------------------
 
-### Logistic Map
+### Logistic Map:
 #' @title A function to generate a time series from the logistic map
 #' @export
 #' @description Generates a time series from the logistic map
@@ -21,13 +21,13 @@ logistic_map <- function(N, r=4, start="rand", disregard_N=0) {
   if (start == "rand")  {
     start = stats::runif(1, min=0, max=1) }
   if (start >= 1 | start <= 0) {
-    print("Start value is not in the range [0,1]")
+    message("Start value is not in the range [0,1]")
     return()
   }
   
   # check r
   if (r > 4.000000001 | r < 0) {
-    print("r must be in the range [0,4]")
+    message("r must be in the range [0,4]")
     return()
   }
   
@@ -61,13 +61,13 @@ tent_map <- function(N, mu = 2, start="rand", disregard_N=0) {
   if (start == "rand")  {
     start = stats::runif(1, min=0, max=1) }
   if (start >= 1 | start <= 0) {
-    print("Start value is not in the range [0,1]")
+    message("Start value is not in the range [0,1]")
     return()
   }
   
   # check mu
   if (mu > 2 | mu < 0) {
-    print("mu must be in the range [0,2]")
+    message("mu must be in the range [0,2]")
     return()
   }
   
@@ -105,13 +105,13 @@ skew_tent_map <- function(N, a=0.1847, start="rand", disregard_N=0) {
   if (start == "rand")  {
     start = stats::runif(1, min=0, max=1) }
   if (start >= 1 | start <= 0) {
-    print("Start value is not in the range [0,1]")
+    message("Start value is not in the range [0,1]")
     return()
   }
   
   # check a
   if (a > 1 | a < 0) {
-    print("a must be in the range [0,1]")
+    message("a must be in the range [0,1]")
     return()
   }
   
@@ -158,7 +158,7 @@ henon_map <- function(N, a = 1.4, b = 0.3, startx="rand", starty="rand",
   if (startx == "rand")  {
     startx = stats::runif(1, min=0, max=1) }
   if (startx >= 1 | startx <= 0) {
-    print("Start value x is not in the range ]0,1[")
+    message("Start value x is not in the range ]0,1[")
     return()
   }
   
@@ -166,7 +166,7 @@ henon_map <- function(N, a = 1.4, b = 0.3, startx="rand", starty="rand",
   if (starty == "rand")  {
     starty = stats::runif(1, min=0, max=1) }
   if (starty >= 1 | starty <= 0) {
-    print("Start value y is not in the range ]0,1[")
+    message("Start value y is not in the range ]0,1[")
     return()
   }
   
@@ -219,13 +219,13 @@ schuster_map <- function(N, z=2, start="rand", disregard_N=0) {
   if (start == "rand")  {
     start = stats::runif(1, min=0, max=1) }
   if (start >= 1 | start <= 0) {
-    print("Start value is not in the range ]0,1[")
+    message("Start value is not in the range ]0,1[")
     return()
   }
   
   # check z
   if (z > 5/2 | z < 1.25) {
-    print("z should be in the range [1.25,2.5]")
+    message("z should be in the range [1.25,2.5]")
     return()
   }
   

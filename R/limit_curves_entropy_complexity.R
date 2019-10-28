@@ -61,7 +61,7 @@ maximum_limit_curve <- function(ndemb) {
       H_s[i,k] <- shannon(P)/log(N)
       C_js[i,k] <- H_s[i,k]*Q0*(shannon((P+Pe)/2) - shannon(P)/2 - shannon(Pe)/2)
     }
-    print(i)
+    message(i)
   }
   
   extract <- seq(0,1,by=0.0001)
